@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Món Ăn JN&T </title>
+    </head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #4a4a4a;
+            margin: 0;
+            padding: 0;
+            background-color: #FFF8DC;
+        }
+        header {
+            height: 400px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            background-image: url('img/banner/bg_bn.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+       	h1{
+			color: hotpink;
+		}
+		b{
+			color:hotpink;
+		}
+		tt{
+			color: red;
+		}
+        .order-container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            font-weight: bold;
+        }
+        input, textarea, button {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+        button {
+            background-color: hotpink;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #c71585;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            height: 400px;
+            background-image: url('bg/footer.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: black;
+        }
+        footer img {
+            margin-top: 20px;
+            width: 150px;
+            height: 150px;
+        }
+        .back-button {
+			float: left;
+			margin-top: 40px;
+            margin-bottom: 30px;
+            padding: 10px 20px;
+			height: auto;
+			width: 100px;
+            background-color: #52B9F3;
+            color: #FFFFFF;
+            border: 1px solid #F3F27D;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .back-button:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+
+<header>
+	
+</header>
+<body>
+   <!-- QR ads APP -->
+	<div style="position: fixed; left: 0; top: 30%; width: 15%; text-align: center;">
+		<h4 style="color: #de200b;">Thông tin chi tiết</h4>
+		<img src="img/qr code/facebook_qrcode.png" alt="QR Code" style="width:120px;height: 130px; border-radius: 10px;">
+    </div>
+    
+	<div class="back-button" onclick="goBack()">← Quay lại </div>
+    <div class="order-container">
+        
+        <h1>Đặt Món Ăn <b>JN&T</b><tt>Restaurant</tt></h1>
+        <p><strong>Tên món ăn:</strong> <span id="dishName"></span></p>
+        <label for="quantitytab">Số bàn:</label>
+        <input type="number" id="quantitytab" min="1" value="1" required>
+        <label for="quantity">Số lượng:</label>
+        <input type="number" id="quantity" min="1" value="1" required>
+        <label for="notes">Ghi chú:</label>
+        <textarea id="notes" rows="5" placeholder="Ví dụ: Không cay, thêm rau,có thể đặt nước uống..."></textarea>
+        <button onclick="submitOrder()">Đặt Món</button>
+    </div>
+
+
+    <script>
+        // Lấy dữ liệu món ăn từ URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const dishName = urlParams.get('dish');
+        document.getElementById('dishName').textContent = dishName;
+
+        // Xử lý gửi đơn hàng
+        function submitOrder() {
+            const tableNumber = document.getElementById('quantitytab').value;
+            const quantity = document.getElementById('quantity').value;
+            const notes = document.getElementById('notes').value;
+
+            if (!tableNumber || !quantity) {
+                alert('Vui lòng điền đầy đủ thông tin!');
+                return;
+            }
+
+            alert(`Bạn đã đặt món: ${dishName}\nSố bàn: ${tableNumber}\nSố lượng: ${quantity}\nGhi chú: ${notes}`);
+        }
+
+        // Điều hướng quay lại
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+    <footer>
+        <h1><b>JN&T</b> <tt>Restaurant</tt></h1>
+        <img src="img/logo/LogoJNT.png" alt="logoJNT" />
+        <h2>Thông tin liên hệ</h2>
+        <p>
+            <i>Địa chỉ:</i> Xuân Lộc, Đồng Nai, Việt Nam <br />
+            <i>Điện thoại:</i> +84 56 428 2909 <br />
+            <i>Email:</i> suport.jandtsh.box@gmail.com
+        </p>
+        <p>Copyright © 2024 by dev Vwu. All rights reserved.</p>
+    </footer>
+
+</html>

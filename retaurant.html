@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhà Hàng JN&T</title>
+    </head>
+   <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            color: #4a4a4a;
+            background-color: #fdfaf3;
+        }
+        
+        header {
+            width: 100%;
+            min-height: 200px;
+            height: auto;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            background-image: url(img/banner/bg_bn.gif);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        h1 {
+            color: hotpink;
+        }
+        
+        b {
+            color: hotpink;
+        }
+        
+        tt {
+            color: red;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .menu-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .menu-item {
+            flex: 1 1 calc(25% - 20px);
+            min-width: 250px;
+            max-width: 280px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            background-color: #FFF8DC;
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-item-details {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .menu-item-details h3 {
+            font-size: 1.2rem;
+            color: #8B4513;
+            margin-bottom: 10px;
+        }
+
+        .menu-item-details p {
+            font-size: 0.9rem;
+            color: #4a4a4a;
+            margin-bottom: 15px;
+        }
+
+        .menu-section {
+            margin-bottom: 40px;
+        }
+        
+        .menu-section h2 {
+            font-size: 1.8rem;
+            color: #8B4513;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .order-button {
+            padding: 10px 15px;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+            border-radius: 5px;
+            align-self: center;
+            width: 80%;
+        }
+
+        .order-button:hover {
+            opacity: 0.9;
+        }
+
+        .sidebar-qr {
+            position: fixed;
+            left: 10px;
+            top: 30%;
+            width: 15%;
+            text-align: center;
+            z-index: 100;
+        }
+
+        .sidebar-qr img {
+            width: 100%;
+            max-width: 120px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            min-height: 300px;
+            background-image: url(bg/footer.gif);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        footer img {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 15px;
+        }
+
+        /* Media Queries */
+        @media (max-width: 1200px) {
+            .menu-item {
+                flex: 1 1 calc(33.333% - 20px);
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .menu-item {
+                flex: 1 1 calc(50% - 20px);
+            }
+            
+            .sidebar-qr {
+                width: 100px;
+            }
+            
+            .sidebar-qr h4 {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header, footer {
+                min-height: 200px;
+            }
+            
+            .sidebar-qr {
+                display: none;
+            }
+            
+            .menu-item {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+            
+            .menu-items {
+                gap: 15px;
+            }
+            
+            .menu-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            main {
+                padding: 10px;
+            }
+            
+            .menu-section {
+                margin-bottom: 30px;
+            }
+            
+            .menu-section h2 {
+                font-size: 1.3rem;
+                margin-bottom: 20px;
+            }
+            
+            .menu-item-details {
+                padding: 10px;
+            }
+            
+            .menu-item-details h3 {
+                font-size: 1.1rem;
+            }
+            
+            .order-button {
+                width: 90%;
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+
+<header>
+</header>
+<body>
+<main>
+	
+    <!-- Restaurant Biography Section -->
+
+        <h2 style="text-align: center; color: hotpink; font-size: 2rem;">Tầm Nhìn & Sứ Mệnh Của <b>JN&T </b><tt>Restaurant</tt></h2>
+        <p style="text-align: justify; font-size: 1rem; color: #4a4a4a; line-height: 1.8; margin-top: 20px;">
+            Được thành lập vào năm <tt>2050</tt>, <b>JN&T</b> không chỉ là một nhà hàng thông thường mà còn là biểu tượng của sự giao thoa giữa nghệ thuật ẩm thực và công nghệ hiện đại. 
+            Với hơn <tt>300 chi nhánh</tt> trải dài khắp mọi miền đất nước, <b>JN&T</b> đã trở thành thương hiệu tiên phong trong việc mang đến trải nghiệm ẩm thực đẳng cấp, nơi mỗi món ăn không chỉ là hương vị mà còn là câu chuyện, là cảm xúc và là kết nối giữa con người với con người.
+        </p>
+        <p style="text-align: justify; font-size: 1rem; color: #4a4a4a; line-height: 1.8;">
+            Chúng tôi tự hào áp dụng những công nghệ tiên tiến nhất trong ngành ẩm thực để phục vụ thực khách. Tại <b>JN&T</b>, bạn sẽ được trải nghiệm:
+        </p>
+        <ul style="margin-left: 20px; font-size: 1rem; color: #4a4a4a; line-height: 1.8;">
+            <li><b>Hệ thống thực đơn điện tử</b> cho phép bạn khám phá và chọn món ngay trên màn hình cảm ứng tích hợp tại bàn.</li>
+            <li><b>Ứng dụng thông minh JN&T</b>, hỗ trợ đặt bàn trước, theo dõi lịch sử gọi món và nhận ưu đãi đặc biệt.</li>
+            <li><b>Bếp mở thông minh</b> với công nghệ nấu ăn tự động và kiểm soát nhiệt độ chuẩn xác, đảm bảo mọi món ăn luôn giữ được hương vị nguyên bản.</li>
+            <li><b>Robot phục vụ</b>, mang đến trải nghiệm mới lạ khi thức ăn được phục vụ một cách chuyên nghiệp và nhanh chóng.</li>
+            <li><b>Không gian tương tác ảo (AR)</b>, giúp thực khách khám phá câu chuyện đằng sau từng món ăn qua hình ảnh và âm thanh sống động.</li>
+        </ul>
+        <p style="text-align: justify; font-size: 1rem; color: #4a4a4a; line-height: 1.8;">
+            Nhưng điều làm nên sự khác biệt lớn nhất của chúng tôi chính là con người. Đội ngũ đầu bếp và nhân viên tại JN&T luôn nỗ lực mang đến sự hài lòng tối đa cho thực khách thông qua từng chi tiết nhỏ nhất. 
+            Chúng tôi tin rằng, món ăn ngon không chỉ là sự kết hợp giữa các nguyên liệu mà còn là tâm huyết và tình yêu dành cho nghệ thuật ẩm thực.
+        </p>
+        <p style="text-align: justify; font-size: 1rem; color: #4a4a4a; line-height: 1.8;">
+            Hãy đến với <b>JN&T Restaurant</b> để trải nghiệm một hành trình ẩm thực độc đáo, nơi mỗi bữa ăn là một kỷ niệm khó quên. Tương lai của JN&T là không ngừng đổi mới, không ngừng vươn xa, với mục tiêu chinh phục cả thị trường quốc tế, 
+            trở thành biểu tượng toàn cầu trong ngành ẩm thực và là niềm tự hào của Việt Nam.
+        </p>
+        <hr size="3px" max-width="1600px" noshade>
+    <!--<div class="banner-container">
+    <img src="img/banner/bg_bn.gif" alt="Tầm nhìn JN&T Restaurant" class="banner-image">
+    	<div class="banner-overlay">
+       		 <h3 class="banner-text">Khám Phá Tương Lai Ẩm Thực Cùng JN&T</h3>
+ 	   	</div>
+	</div>
+    </section>-->
+	<!-- QR ads APP -->
+	<div style="position: fixed; left: 0; top: 30%; width: 15%; text-align: center;">
+		<h4 style="color: #de200b;">Thông tin chi tiết</h4>
+		<img src="img/qr code/facebook_qrcode.png" alt="QR Code" style="width:120px;height: 130px; border-radius: 10px;">
+    </div>
+		<!-- Appetizers Section -->
+    <div class="menu-section">
+        <h2>Menu Các Món Khai Vị</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="img/crab_soup.jpg" style="width: 250px;height: 200px" alt="AD 1">
+                <div class="menu-item-details">
+                    <h3>Súp Cua</h3>
+                    <p>Nhẹ nhàng thanh mát, tôm tươi, bột năng.</p>
+                    <button class="order-button" onclick="goToOrderPage('Súp Cua')">Đặt Món</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/goi_cuon.jpg" style="width: 250px;height: 200px" alt="AD 2">
+                <div class="menu-item-details">
+                    <h3>Gỏi Cuốn</h3>
+                    <p>Rau sống, tôm tươi, thịt heo, bún gói trong bánh tráng.</p>
+                    <button class="order-button" onclick="goToOrderPage('Gỏi Cuốn')">Đặt Món</button>
+                </div>
+            </div>
+			 <div class="menu-item">
+                <img src="img/cha_ram.jpg" style="width: 250px;height: 200px" alt="AD 3">
+                <div class="menu-item-details">
+                    <h3>Chả Ram Tôm Thịt</h3>
+                    <p>Rau sống, tôm và thịt heo,vỏ bánh cuộn giòn.</p>
+                    <button class="order-button" onclick="goToOrderPage('Chả Ram Tôm Thịt')">Đặt Món</button>
+                </div>
+            </div>
+			 <div class="menu-item">
+                <img src="img/oc_nhoi_thit.jpg" style="width: 250px;height: 200px" alt="AD 4">
+                <div class="menu-item-details">
+                    <h3>Ốc Bưu Nhồi Thịt</h3>
+                    <p>Ốc bưu đen, thịt heo,nước hầm thanh ngọt.</p>
+                    <button class="order-button" onclick="goToOrderPage('Ốc Bưu Nhồi Thịt')">Đặt Món</button>
+                </div>
+            </div>
+            <!-- Thêm các món khác tương tự -->
+        </div>
+    </div>
+
+    <!-- Side Dishes Section -->
+ <div class="menu-section">
+        <h2>Menu Các Món Ăn Kèm</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="img/salad_rongnho.jpg" style="width: 250px;height: 200px" alt="SD 1">
+                <div class="menu-item-details">
+                    <h3>Salad Rong Nho</h3>
+                    <p>Rong nho giòn mọng nước, sốt gia truyền đậm đà.</p>
+                    <button class="order-button" onclick="goToOrderPage('Salad Rong Nho')">Đặt Món</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/mi.jpg" style="width: 250px;height: 200px" alt="SD 2">
+                <div class="menu-item-details">
+                    <h3>Mì Thả Lẩu</h3>
+                    <p>Sợi mì nhỏ nhắn dai dai vàng vàng làm thủ công từ bột mì.</p>
+                    <button class="order-button" onclick="goToOrderPage('Mì Thả Lẩu')">Đặt Món</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/bun.jpg" style="width: 250px;height: 200px" alt="SD 3">
+                <div class="menu-item-details">
+                    <h3>Bún Thả Lẩu</h3>
+                    <p>Sợi bún trắng tinh dẻo dai làm thủ công từ bột gạo.</p>
+                    <button class="order-button" onclick="goToOrderPage('Bún Thả Lẩu')">Đặt Món</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/thit_bo.jpg" style="width: 250px;height: 200px" alt="SD 4">
+                <div class="menu-item-details">
+                    <h3>Thịt Bò Việt Áp Chảo</h3>
+                    <p>Bò thơm ngon, sốt đậm vị Việt.</p>
+                    <button class="order-button" onclick="goToOrderPage('Thịt Bò Việt Áp Chảo')">Đặt Món</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main Dishes Section -->
+    <div class="menu-section">
+        <h2>Menu Các Món Chính</h2>
+       <div class="menu-items">
+            <div class="menu-item">
+                <img src="img/lau_thai.jpg" style="width: 250px;height: 200px" alt="MD 1">
+                <div class="menu-item-details">
+                    <h3> Lẩu Thái Hải Sản</h3>
+                    <p>Lẩu Thái chua cay, nước dùng đậm đà từ xương hầm và gia vị Thái, ăn kèm hải sản tươi sống và rau nhúng.</p>
+                    <button class="order-button" onclick="goToOrderPage('Lẩu Thái Hải Sản')">Đặt Món</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/ga_lae.jpg" style="width: 250px;height: 200px" alt="MD 2">
+                <div class="menu-item-details">
+                    <h3>Lẩu Gà Lá É</h3>
+                    <p>Lẩu gà đặc trưng Phú Yên, nước dùng thanh ngọt kết hợp lá é thơm dịu, ăn kèm nấm và bún tươi.</p>
+                    <button class="order-button" onclick="goToOrderPage('Lẩu Gà Lá É')">Đặt Món</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/de_tiem.jpg" style="width: 250px;height: 200px" alt="MD 3">
+                <div class="menu-item-details">
+                    <h3>Lẩu Dê Tiềm Thuốc Bắc</h3>
+                    <p>Lẩu dê thơm nồng vị thuốc Bắc, thịt dê mềm, nước dùng bổ dưỡng, ăn kèm rau cải xanh và mì.</p>
+                    <button class="order-button" onclick="goToOrderPage('Lẩu Dê Tiềm Thuốc Bắc')">Đặt Món</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/rieu_cua.jpg" style="width: 250px;height: 200px" alt="MD 4">
+                <div class="menu-item-details">
+                    <h3>Lẩu Riêu Cua Đồng</h3>
+					<p>Nước lẩu thơm lừng vị cua đồng, ăn kèm bún, đậu phụ chiên, thịt bò và rau nhúng.</p>
+               <button class="order-button" onclick="goToOrderPage('Lẩu Riêu Cua Đồng')">Đặt Món</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Desserts Section -->
+    <div class="menu-section">
+        <h2>Menu Các Món Tráng Miệng</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="img/che_3mau.jpg" style="width: 250px;height: 200px" alt="DS 1">
+                <div class="menu-item-details">
+                    <h3>Chè Ba Màu</h3>
+                    <p>Chè ba lớp gồm đậu xanh, đậu đỏ và thạch rau câu, ăn kèm nước cốt dừa béo ngậy.</p>
+                    <button class="order-button" onclick="goToOrderPage('Chè Ba Màu')">Đặt Món</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/kem_xoi.jpg" style="width: 250px;height: 200px" alt="DS 2">
+                <div class="menu-item-details">
+                    <h3>Kem Xôi Dừa</h3>
+                    <p>Kem vani ngọt mát, ăn cùng xôi nếp dẻo và cơm dừa bào sợi.</p>
+                    <button class="order-button" onclick="goToOrderPage('Kem Xôi Dừa')">Đặt Món</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/thach_traicay.jpg" style="width: 250px;height: 200px" alt="DS 3">
+                <div class="menu-item-details">
+                    <h3>Thạch Trái Cây Nhiệt Đới</h3>
+                    <p>Thạch rau câu mát lạnh, hòa lẫn các loại trái cây nhiệt đới tươi mát.</p>
+                    <button class="order-button" onclick="goToOrderPage('Thạch Trái Cây Nhiệt Đới')">Đặt Món</button>
+                </div>
+            </div>
+            <div class="menu-item">
+                <img src="img/kem_traicay.jpg" style="width: 250px;height: 200px" alt="DS4 ">
+                <div class="menu-item-details">
+                    <h3>Kem Trái Cây Nhiệt Đới</h3>
+                    <p>Kem kết hợp các loại trái cây ngon và chất lượng, được trang trí bằng lát trái cây tươi.</p>
+                    <button class="order-button" onclick="goToOrderPage('Kem Trái Cây Nhiệt Đới')">Đặt Món</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Drink Section -->
+<div class="menu-section">
+    <h2>Menu Các Loại Đồ Uống</h2>
+    <div class="menu-items">
+        <div class="menu-item">
+            <img src="img/vang.jpg" alt="Rượu" style="width: 50%; height: 50%;">
+            <div class="menu-item-details">
+                <h3>Các Loại Rượu</h3>
+                <p>Rượu mạnh, rượu trắng nhẹ, rượu vang cao cấp.</p>
+                <button class="order-button" onclick="goToOrderPage('Các Loại Rượu')">Đặt Món</button>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="img/bia.jpg" alt="Bia" style="width: 50%; height: 50%;">
+            <div class="menu-item-details">
+                <h3>Các Loại Bia</h3>
+                <p>Bia tươi, bia chai/bia lon (Saigon, Tiger, Heineken).</p>
+                <button class="order-button" onclick="goToOrderPage('Các Loại Bia')">Đặt Món</button>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="img/tra.jpg" alt="Trà" style="width: 50%; height: 50%;">
+            <div class="menu-item-details">
+                <h3>Các Loại Trà</h3>
+                <p>Trà chanh mật ong, trà trái cây, trà đá miễn phí.</p>
+                <button class="order-button" onclick="goToOrderPage('Các Loại Trà')">Đặt Món</button>
+            </div>
+        </div>
+        <div class="menu-item">
+            <img src="img/soda.jpg" alt="Nước Có Gas" style="width: 50%; height: 50%;">
+            <div class="menu-item-details">
+                <h3>Các Loại Nước Có Gas</h3>
+                <p>Pepsi, Coca, 7Up, Mirinda (xanh, cam, xá xị), soda trái cây.</p>
+                <button class="order-button" onclick="goToOrderPage('Các Loại Nước Có Gas')">Đặt Món</button>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+ <script>
+	 function goToOrderPage(dishName) {
+    const url = `order.html?dish=${encodeURIComponent(dishName)}`;
+    window.location.href = url;
+}
+	</script>
+</body>
+<footer>
+            <h1><b>JN&T</b><tt>Restaurant</tt></h1>
+			<img src="img/logo/LogoJNT.png" alt="logoJNT" style="width=150px;height: 150px"/>
+			<h2>Thông tin liên hệ</h2>
+			<u><i>Địa chỉ: Xuân Lộc-Đồng Nai-Việt Nam </i><br/>
+			<i>Điện thoại: ||||||+84|56|428|2909||||||</i><br/>
+			<i>Email: suport.jandtsh.box@gmail.com</i><br /></u>
+			<p>Copyright © 2024 by for dev Vwu. All rights reserved.</p>
+    </footer>
+</html>
